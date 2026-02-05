@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initAnimations();
   initParallax();
   initCounters();
+  initCourseFilter();
 });
 
 /* ========================================
@@ -849,6 +850,56 @@ function initDropdownNav() {
     document.addEventListener('click', (e) => {
       if (!dropdown.contains(e.target)) {
         menu.classList.remove('show');
+      }
+    });
+  });
+}
+
+/* ========================================
+   COURSE CATEGORY FILTER
+   ======================================== */
+
+function initCourseFilter() {
+  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-category]');
+  const courseCards = document.querySelectorAll('.course-card[data-category]');
+  const courseCount = document.getElementById('course-count');
+
+  if (sidebarLinks.length === 0 || courseCards.length === 0) return;
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Update active state
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const category = link.dataset.category;
+      let visibleCount = 0;
+
+      courseCards.forEach(card => {
+        const cardCategory = card.dataset.category;
+
+        if (category === 'all' || cardCategory === category) {
+          card.style.display = '';
+          card.style.animation = 'fadeIn 0.3s ease';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update count
+      if (courseCount) {
+        courseCount.textContent = visibleCount;
+      }
+
+      // Smooth scroll to course grid on mobile
+      if (window.innerWidth <= 991) {
+        const grid = document.querySelector('.courses-grid');
+        if (grid) {
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
