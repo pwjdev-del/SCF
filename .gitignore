@@ -1,0 +1,10 @@
+# Ignore agent folder
+.agent
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
