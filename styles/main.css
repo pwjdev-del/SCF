@@ -741,6 +741,11 @@ p:last-child {
         height: var(--header-height-mobile);
     }
 
+    .logo-img {
+        height: 35px;
+        width: auto;
+    }
+
     .nav {
         display: none;
     }
