@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="LearnEd by SCF - Lifelong Learning & Workforce Development. Courses for every age, every interest, every schedule. From youth camps to retirement planning.">
+  <meta name="keywords"
+    content="SCF, State College of Florida, LearnEd, courses, professional development, youth camps, workforce training, continuing education">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LearnEd by SCF - Lifelong Learning & Workforce Development">
+  <meta property="og:description"
+    content="Courses for every age, every interest, every schedule. From youth camps to retirement planning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://learned.scf.edu">
+
+  <title>LearnEd by SCF | Lifelong Learning & Workforce Development</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">LearnEd</span>
+        <span class="logo-tagline">Lifelong Learning & Workforce Development</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-dropdown">
+            <a href="courses.html" class="nav-link nav-dropdown-toggle">
+              Courses
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="courses.html#youth" class="nav-dropdown-item">Youth Enrichment</a>
+              <a href="courses.html#leisure" class="nav-dropdown-item">Life & Leisure</a>
+              <a href="courses.html#professional" class="nav-dropdown-item">Professional Training</a>
+              <a href="courses.html#corporate" class="nav-dropdown-item">Corporate Training</a>
+              <a href="courses.html#tech" class="nav-dropdown-item">Technology</a>
+              <a href="courses.html#english" class="nav-dropdown-item">English Language</a>
+              <a href="courses.html#traffic" class="nav-dropdown-item">Traffic Safety</a>
+              <a href="courses.html#arts" class="nav-dropdown-item">Performing Arts</a>
+              <a href="courses.html#virtual" class="nav-dropdown-item">Virtual Learning</a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+        <div class="header-search" id="headerSearch">
+          <input type="text" class="header-search-input" placeholder="Search courses..." aria-label="Search courses">
+          <button class="header-search-btn" aria-label="Toggle search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+        <a href="https://scf.augusoft.net/" class="btn btn-primary" target="_blank" rel="noopener">Find a Course</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-backdrop"></div>
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-menu-close" aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="courses.html" class="mobile-nav-link">All Courses</a></li>
+        <li><a href="courses.html#youth" class="mobile-nav-link">Youth Enrichment</a></li>
+        <li><a href="courses.html#professional" class="mobile-nav-link">Professional Training</a></li>
+        <li><a href="courses.html#leisure" class="mobile-nav-link">Life & Leisure</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+      </ul>
+      <div style="padding: 16px;">
+        <a href="https://scf.augusoft.net/" class="btn btn-primary" style="width: 100%;" target="_blank"
+          rel="noopener">Find a Course</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=80"
+        alt="Diverse group of students learning together" class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Learn Something <span class="highlight">New Today</span></h1>
+          <p class="hero-subtitle">From youth camps to retirement planning—courses for every age, every interest, every
+            goal.</p>
+
+          <!-- Hero Search Bar -->
+          <div class="hero-search">
+            <span class="hero-search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" class="hero-search-input" placeholder="Search for courses, topics, or skills..."
+              aria-label="Search courses">
+            <button class="hero-search-btn" onclick="window.open('https://scf.augusoft.net/', '_blank')">Search</button>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+            <a href="https://scf.augusoft.net/" class="btn btn-ghost" target="_blank" rel="noopener">View Schedule</a>
+          </div>
+
+          <!-- Stats Bar -->
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number">500+</span>
+              <span class="hero-stat-label">Courses Available</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">15K+</span>
+              <span class="hero-stat-label">Students Served</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">50+</span>
+              <span class="hero-stat-label">Years of Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Cards Section -->
+    <section class="section section-cream" id="categories">
+      <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+          <span class="eyebrow">Explore</span>
+          <h2>What Will You Learn?</h2>
+          <p>Discover courses designed to meet you where you are.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Youth Enrichment -->
+          <a href="courses.html#youth" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFB81C 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3>Youth Enrichment</h3>
+            <p>STEAM, camps & after-school fun for K-12</p>
+          </a>
+
+          <!-- Life & Leisure -->
+          <a href="courses.html#leisure" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3>Life & Leisure</h3>
+            <p>Cooking, floral design, music & hobbies</p>
+          </a>
+
+          <!-- Professional Training -->
+          <a href="courses.html#professional" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #003366 0%, #005599 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h3>Professional & Skills Training</h3>
+            <p>Certifications & career advancement</p>
+          </a>
+
+          <!-- Corporate Training -->
+          <a href="courses.html#corporate" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Corporate Training</h3>
+            <p>Custom programs for your team</p>
+          </a>
+
+          <!-- Technology -->
+          <a href="courses.html#tech" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>Technology</h3>
+            <p>Microsoft Office, coding & digital skills</p>
+          </a>
+
+          <!-- English Language -->
+          <a href="courses.html#english" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+              </svg>
+            </div>
+            <h3>English Language Institute</h3>
+            <p>ESL & language programs</p>
+          </a>
+
+          <!-- Traffic Safety -->
+          <a href="courses.html#traffic" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path
+                  d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2-4H8L6 10l-2.5 1.1C2.7 11.3 2 12.1 2 13v3c0 .6.4 1 1 1h2">
+                </path>
+                <circle cx="7" cy="17" r="2"></circle>
+                <circle cx="17" cy="17" r="2"></circle>
+              </svg>
+            </div>
+            <h3>Traffic Safety Institute</h3>
+            <p>DUI courses & driver education</p>
+          </a>
+
+          <!-- Performing Arts -->
+          <a href="courses.html#arts" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Performing Arts</h3>
+            <p>Band, voice, theater</p>
+          </a>
+
+          <!-- Virtual Learning -->
+          <a href="courses.html#virtual" class="card category-card" data-animate="fadeInUp">
+            <div class="category-icon" style="background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <h3>Virtual Learning</h3>
+            <p>Learn from anywhere</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+          <h2>Why LearnEd?</h2>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="value-card" data-animate="fadeInUp">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Every Age</h3>
+            <p>From 5 to 95, there's a course for you. Youth camps, adult education, and senior enrichment.</p>
+          </div>
+
+          <div class="value-card" data-animate="fadeInUp">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <h3>Every Interest</h3>
+            <p>Career skills, creative arts, life enrichment. If you can imagine it, we probably teach it.</p>
+          </div>
+
+          <div class="value-card" data-animate="fadeInUp">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3>Every Schedule</h3>
+            <p>In-person, online, evenings, weekends. Learning that fits your life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="section" style="background: rgba(78, 205, 196, 0.1);">
+      <div class="container container-wide">
+        <div class="section-header" data-animate="fadeInUp">
+          <span class="eyebrow">Trending</span>
+          <h2>Popular Right Now</h2>
+          <p>These courses are filling up fast.</p>
+        </div>
+
+        <div class="carousel">
+          <div class="carousel-track">
+            <!-- Course 1 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80"
+                  alt="Social Security planning" class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge">Life & Leisure</span>
+                  <h3>Social Security 101</h3>
+                  <p class="course-card-details">Feb 24, 2026 | SCF Lakewood Ranch</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                  alt="Leadership training" class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge" style="background: var(--color-navy);">Professional Training</span>
+                  <h3>SCF Leadership Boot Camp – Level 1</h3>
+                  <p class="course-card-details">Feb 27, 2026 | SCF Lakewood Ranch</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                  alt="Real estate training" class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge" style="background: var(--color-navy);">Professional Training</span>
+                  <h3>ONLINE Real Estate Sales Associate Pre-Licensing</h3>
+                  <p class="course-card-details">Self-paced | Online</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80"
+                  alt="Retirement planning" class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge">Life & Leisure</span>
+                  <h3>Retirement Planning Today</h3>
+                  <p class="course-card-details">Jan 29 - Feb 5, 2026 | SCF Lakewood Ranch</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 5 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80"
+                  alt="Investigation course" class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge" style="background: var(--color-navy);">Professional Training</span>
+                  <h3>Private Investigator 40-Hour Course</h3>
+                  <p class="course-card-details">Feb 14-22, 2026 | SCF Bradenton</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 6 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+                  alt="Medicare information" class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge">Life & Leisure</span>
+                  <h3>Medicare 101 – Everything You Need to Know!</h3>
+                  <p class="course-card-details">Mar 10, 2026 | SCF Venice</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course 7 -->
+            <div class="carousel-slide">
+              <div class="card course-card">
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="CDL training"
+                  class="course-card-image">
+                <div class="course-card-content">
+                  <span class="course-card-badge" style="background: var(--color-navy);">Professional Training</span>
+                  <h3>CDL Class A powered by FleetForce</h3>
+                  <p class="course-card-details">Upon registration | TBD</p>
+                  <div class="course-card-footer">
+                    <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary" target="_blank">Learn
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-nav">
+            <button class="carousel-btn carousel-btn-prev" aria-label="Previous courses">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Next courses">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-navy testimonials">
+      <div class="container">
+        <span class="testimonial-quote-bg">"</span>
+        <div class="section-header" data-animate="fadeInUp">
+          <h2 class="text-white">What Our Learners Say</h2>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="testimonial-card" data-animate="fadeInUp">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <p class="testimonial-text">"Loved this class! Understanding the differences between each generation helps
+              establish effective collaboration."</p>
+            <p class="testimonial-author">— Student, Generations in the Workplace</p>
+          </div>
+
+          <div class="testimonial-card" data-animate="fadeInUp">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <p class="testimonial-text">"Great content! Some awesome tips and tricks even for a seasoned user!"</p>
+            <p class="testimonial-author">— Student, Excel Level 3</p>
+          </div>
+
+          <div class="testimonial-card" data-animate="fadeInUp">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <polygon fill="currentColor"
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <p class="testimonial-text">"She was amazing! I loved this class and it has given me the knowledge needed
+              for my state real estate exam!"</p>
+            <p class="testimonial-author">— Student, Real Estate Pre-Licensing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-cream" id="faq">
+      <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What services do you provide?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="24" height="24">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>As part of SCF Lifelong Learning and Workforce Development, LearnEd offers a variety of non-credit
+                  courses, workshops, and programs that are open to the public. You do not need to enroll in the College
+                  in order to participate. You can take as many courses as you want, whenever you want.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Who can take a course?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="24" height="24">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Participants of all ages are welcome. We offer programs, workshops, camps, and courses for everyone
+                  from elementary school children to retirees.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do I have to enroll at SCF to take a course?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="24" height="24">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>While LearnEd is a division of State College of Florida (SCF), enrollment at SCF is not required to
+                  participate. All LearnEd courses, camps, and workshops are open to the public.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How much does a course cost?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="24" height="24">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Fees vary based on the type of course, level of instruction, and materials needed. Since LearnEd is a
+                  self-supported division of SCF, course pricing is set separately from the for-credit courses at the
+                  College. Please note that all fee payments are due at the time of enrollment via credit or debit card.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Where are the courses held?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="24" height="24">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Courses are available in person, online, or in a hybrid format. In-person courses take place at SCF
+                  Bradenton, SCF Lakewood Ranch, and SCF Venice, with select courses offered in Downtown Sarasota. For
+                  customized corporate training, we offer onsite at your organization as well.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is the refund or cancellation policy?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" width="24" height="24">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>We understand that sometimes life happens. For multi-session classes, you must submit a cancellation
+                  request in writing to LearnEd@SCF.edu at least five (5) business days prior to the first class. For
+                  single-session workshops, the deadline is three (3) business days. Contact us at LearnEd@SCF.edu for
+                  full policy details.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+      <div class="container container-narrow">
+        <h2 data-animate="fadeInUp">Stay in the Loop</h2>
+        <p data-animate="fadeInUp">Get updates on new courses, special events, and exclusive offers.</p>
+
+        <form class="newsletter-form" data-animate="fadeInUp">
+          <input type="email" class="newsletter-input" placeholder="Enter your email" required
+            aria-label="Email address">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+
+        <p class="newsletter-privacy" data-animate="fadeInUp">We respect your inbox. Unsubscribe anytime.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-main">LearnEd</span>
+            <span class="logo-tagline">Lifelong Learning & Workforce Development</span>
+          </div>
+          <p>Part of State College of Florida</p>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Quick Links</h4>
+          <nav class="footer-links">
+            <a href="courses.html" class="footer-link">All Courses</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#faq" class="footer-link">FAQ</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Categories</h4>
+          <nav class="footer-links">
+            <a href="courses.html#youth" class="footer-link">Youth Enrichment</a>
+            <a href="courses.html#professional" class="footer-link">Professional Training</a>
+            <a href="courses.html#leisure" class="footer-link">Life & Leisure</a>
+            <a href="courses.html#tech" class="footer-link">Technology</a>
+            <a href="courses.html#corporate" class="footer-link">Corporate Training</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:LearnEd@SCF.edu">LearnEd@SCF.edu</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+            <a href="tel:941-363-7264">941-363-7264</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>SCF Bradenton<br>Building 8 (26 West Center)<br>5840 26th St. W.<br>Bradenton, FL 34207</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Mon-Fri 8:00am - 4:30pm</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 State College of Florida. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/LearnEdSCF/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/LearnEdSCF/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/showcase/LearnEdSCF/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

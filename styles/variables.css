@@ -1,0 +1,131 @@
+/* ========================================
+   SCF LearnEd - CSS Variables
+   Design System Foundation
+   ======================================== */
+
+:root {
+  /* === PRIMARY COLORS === */
+  --color-navy: #003366;
+  --color-gold: #FFB81C;
+  
+  /* === SECONDARY COLORS === */
+  --color-cream: #FFF8F0;
+  --color-teal: #4ECDC4;
+  --color-coral: #FF6B6B;
+  --color-gray-light: #F5F5F5;
+  --color-gray-dark: #333333;
+  --color-white: #FFFFFF;
+  --color-gray-medium: #666666;
+  --color-gray-border: #E0E0E0;
+  --color-gray-text: #CCCCCC;
+  
+  /* === GRADIENTS === */
+  --gradient-cta: linear-gradient(135deg, #FFB81C 0%, #FF6B6B 100%);
+  --gradient-hero: linear-gradient(to right, rgba(0, 51, 102, 0.85) 0%, rgba(0, 51, 102, 0.4) 50%, transparent 100%);
+  --gradient-teal-light: rgba(78, 205, 196, 0.1);
+  
+  /* === TYPOGRAPHY === */
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  
+  /* Font Sizes - Desktop */
+  --text-h1: 48px;
+  --text-h2: 36px;
+  --text-h3: 28px;
+  --text-h4: 22px;
+  --text-body: 16px;
+  --text-body-lg: 18px;
+  --text-small: 14px;
+  --text-xs: 12px;
+  
+  /* Line Heights */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --line-height-button: 1;
+  
+  /* === SPACING (8-Point Grid) === */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 100px;
+  
+  /* === LAYOUT === */
+  --container-max: 1200px;
+  --container-wide: 1400px;
+  --container-narrow: 800px;
+  --container-form: 600px;
+  
+  /* === BORDERS === */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  
+  /* === SHADOWS === */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-cta: 0 4px 15px rgba(255, 184, 28, 0.3);
+  --shadow-cta-hover: 0 6px 20px rgba(255, 184, 28, 0.4);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* === Z-INDEX === */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-tooltip: 600;
+  
+  /* === HEADER === */
+  --header-height: 80px;
+  --header-height-mobile: 64px;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 991px) {
+  :root {
+    --text-h1: 40px;
+    --text-h2: 32px;
+    --text-h3: 24px;
+    --text-h4: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-h1: 32px;
+    --text-h2: 28px;
+    --text-h3: 22px;
+    --text-h4: 18px;
+    --space-4xl: 60px;
+    --space-5xl: 80px;
+  }
+}
+
+@media (max-width: 575px) {
+  :root {
+    --text-h1: 28px;
+    --text-h2: 24px;
+    --text-h3: 20px;
+    --text-h4: 18px;
+  }
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact LearnEd by SCF - Get in touch with our team for questions about courses, registration, corporate training, or general inquiries.">
+
+    <title>Contact Us | LearnEd by SCF</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">LearnEd</span>
+                <span class="logo-tagline">Lifelong Learning & Workforce Development</span>
+            </a>
+
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="nav-dropdown">
+                        <a href="courses.html" class="nav-link nav-dropdown-toggle">
+                            Courses
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="courses.html#youth" class="nav-dropdown-item">Youth Enrichment</a>
+                            <a href="courses.html#leisure" class="nav-dropdown-item">Life & Leisure</a>
+                            <a href="courses.html#professional" class="nav-dropdown-item">Professional Training</a>
+                            <a href="courses.html#corporate" class="nav-dropdown-item">Corporate Training</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                </ul>
+                <a href="https://scf.augusoft.net/" class="btn btn-primary" target="_blank" rel="noopener">Find a
+                    Course</a>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+        <button class="mobile-menu-close" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="courses.html" class="mobile-nav-link">All Courses</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Compact -->
+        <section class="hero hero-compact">
+            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80"
+                alt="Person using laptop" class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Get In Touch</h1>
+                    <p class="hero-subtitle">We're here to help you find your perfect learning path.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section section-white">
+            <div class="container">
+                <div class="contact-layout">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper" data-animate="fadeInUp">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 1-2 business days.</p>
+
+                        <form class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address <span
+                                        class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input"
+                                    placeholder="(___) ___-____">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject <span class="required">*</span></label>
+                                <select id="subject" name="subject" class="form-input form-select" required>
+                                    <option value="">Select a topic...</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="registration">Course Registration Help</option>
+                                    <option value="youth">Youth Enrichment Programs</option>
+                                    <option value="professional">Professional Training</option>
+                                    <option value="corporate">Corporate Training</option>
+                                    <option value="refund">Refund/Cancellation</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" class="form-input form-textarea" rows="5" required
+                                    placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info" data-animate="fadeInUp">
+                        <div class="contact-info-card">
+                            <h3>Contact Information</h3>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:LearnEd@SCF.edu">LearnEd@SCF.edu</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <a href="tel:941-363-7264">941-363-7264</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Office Hours</h4>
+                                    <p>Monday – Friday<br>8:00 AM – 4:30 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Main Office</h4>
+                                    <p>SCF Bradenton<br>Building 8 (26 West Center)<br>5840 26th St. W.<br>Bradenton, FL
+                                        34207</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-card">
+                            <h3>Connect With Us</h3>
+                            <div class="contact-social-links">
+                                <a href="https://www.facebook.com/LearnEdSCF/" target="_blank" rel="noopener"
+                                    class="social-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                        </path>
+                                    </svg>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="https://www.instagram.com/LearnEdSCF/" target="_blank" rel="noopener"
+                                    class="social-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="https://www.linkedin.com/showcase/LearnEdSCF/" target="_blank" rel="noopener"
+                                    class="social-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Map Section -->
+        <section class="section section-cream">
+            <div class="container">
+                <div class="section-header" data-animate="fadeInUp">
+                    <h2>Our Locations</h2>
+                    <p>Find the campus nearest to you.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="location-card" data-animate="fadeInUp">
+                        <div class="location-content">
+                            <h3>SCF Bradenton</h3>
+                            <p><strong>Building 8 (26 West Center)</strong><br>5840 26th St. W.<br>Bradenton, FL 34207
+                            </p>
+                            <a href="https://maps.google.com/?q=5840+26th+St+W+Bradenton+FL"
+                                class="btn btn-small btn-outline" target="_blank" rel="noopener">Get Directions</a>
+                        </div>
+                    </div>
+
+                    <div class="location-card" data-animate="fadeInUp">
+                        <div class="location-content">
+                            <h3>SCF Lakewood Ranch</h3>
+                            <p>7131 Professional Pkwy E.<br>Lakewood Ranch, FL 34240</p>
+                            <a href="https://maps.google.com/?q=7131+Professional+Pkwy+E+Lakewood+Ranch+FL"
+                                class="btn btn-small btn-outline" target="_blank" rel="noopener">Get Directions</a>
+                        </div>
+                    </div>
+
+                    <div class="location-card" data-animate="fadeInUp">
+                        <div class="location-content">
+                            <h3>SCF Venice</h3>
+                            <p>8000 S. Tamiami Trail<br>Venice, FL 34293</p>
+                            <a href="https://maps.google.com/?q=8000+S+Tamiami+Trail+Venice+FL"
+                                class="btn btn-small btn-outline" target="_blank" rel="noopener">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-main">LearnEd</span>
+                        <span class="logo-tagline">Lifelong Learning & Workforce Development</span>
+                    </div>
+                    <p>Part of State College of Florida</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <nav class="footer-links">
+                        <a href="courses.html" class="footer-link">All Courses</a>
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="index.html#faq" class="footer-link">FAQ</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Categories</h4>
+                    <nav class="footer-links">
+                        <a href="courses.html#youth" class="footer-link">Youth Enrichment</a>
+                        <a href="courses.html#professional" class="footer-link">Professional Training</a>
+                        <a href="courses.html#leisure" class="footer-link">Life & Leisure</a>
+                        <a href="courses.html#tech" class="footer-link">Technology</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:LearnEd@SCF.edu">LearnEd@SCF.edu</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <a href="tel:941-363-7264">941-363-7264</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 State College of Florida. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/LearnEdSCF/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/LearnEdSCF/" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/showcase/LearnEdSCF/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

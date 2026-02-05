@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse all LearnEd courses - professional training, youth enrichment, life & leisure, technology, and more. Filter by category, location, or format.">
+
+    <title>Courses | LearnEd by SCF</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">LearnEd</span>
+                <span class="logo-tagline">Lifelong Learning & Workforce Development</span>
+            </a>
+
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="nav-dropdown">
+                        <a href="courses.html" class="nav-link nav-dropdown-toggle active">
+                            Courses
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="#youth" class="nav-dropdown-item">Youth Enrichment</a>
+                            <a href="#leisure" class="nav-dropdown-item">Life & Leisure</a>
+                            <a href="#professional" class="nav-dropdown-item">Professional Training</a>
+                            <a href="#corporate" class="nav-dropdown-item">Corporate Training</a>
+                            <a href="#tech" class="nav-dropdown-item">Technology</a>
+                            <a href="#english" class="nav-dropdown-item">English Language</a>
+                            <a href="#traffic" class="nav-dropdown-item">Traffic Safety</a>
+                            <a href="#arts" class="nav-dropdown-item">Performing Arts</a>
+                            <a href="#virtual" class="nav-dropdown-item">Virtual Learning</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                </ul>
+                <a href="https://scf.augusoft.net/" class="btn btn-primary" target="_blank" rel="noopener">Find a
+                    Course</a>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+        <button class="mobile-menu-close" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="courses.html" class="mobile-nav-link">All Courses</a></li>
+                <li><a href="#youth" class="mobile-nav-link">Youth Enrichment</a></li>
+                <li><a href="#professional" class="mobile-nav-link">Professional Training</a></li>
+                <li><a href="#leisure" class="mobile-nav-link">Life & Leisure</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Compact -->
+        <section class="hero hero-compact">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80"
+                alt="Students in classroom" class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Courses to Help You Learn and Grow</h1>
+                    <p class="hero-subtitle">Of course we have a course for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="container">
+                <div class="filter-bar-inner">
+                    <select class="filter-select" name="category" aria-label="Filter by category">
+                        <option value="">All Categories</option>
+                        <option value="youth">Youth Enrichment</option>
+                        <option value="leisure">Life & Leisure</option>
+                        <option value="professional">Professional Training</option>
+                        <option value="corporate">Corporate Training</option>
+                        <option value="tech">Technology</option>
+                        <option value="english">English Language</option>
+                        <option value="traffic">Traffic Safety</option>
+                        <option value="arts">Performing Arts</option>
+                        <option value="virtual">Virtual Learning</option>
+                    </select>
+
+                    <select class="filter-select" name="location" aria-label="Filter by location">
+                        <option value="">All Locations</option>
+                        <option value="bradenton">SCF Bradenton</option>
+                        <option value="lakewood">SCF Lakewood Ranch</option>
+                        <option value="venice">SCF Venice</option>
+                        <option value="online">Online</option>
+                    </select>
+
+                    <select class="filter-select" name="format" aria-label="Filter by format">
+                        <option value="">All Formats</option>
+                        <option value="in-person">In-Person</option>
+                        <option value="online">Online</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+
+                    <div class="filter-search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" placeholder="Search courses..." aria-label="Search courses">
+                    </div>
+
+                    <div class="filter-chips"></div>
+                    <button class="filter-clear" style="display: none;">Clear All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Section -->
+        <section class="section section-white">
+            <div class="container">
+                <div class="courses-layout">
+                    <!-- Sidebar -->
+                    <aside class="courses-sidebar">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <nav class="sidebar-list">
+                            <a href="#youth" class="sidebar-link">
+                                <span>Youth Enrichment</span>
+                                <span class="sidebar-count">24</span>
+                            </a>
+                            <a href="#leisure" class="sidebar-link">
+                                <span>Life & Leisure</span>
+                                <span class="sidebar-count">38</span>
+                            </a>
+                            <a href="#professional" class="sidebar-link active">
+                                <span>Professional Training</span>
+                                <span class="sidebar-count">52</span>
+                            </a>
+                            <a href="#corporate" class="sidebar-link">
+                                <span>Corporate Training</span>
+                                <span class="sidebar-count">15</span>
+                            </a>
+                            <a href="#tech" class="sidebar-link">
+                                <span>Technology</span>
+                                <span class="sidebar-count">28</span>
+                            </a>
+                            <a href="#english" class="sidebar-link">
+                                <span>English Language</span>
+                                <span class="sidebar-count">12</span>
+                            </a>
+                            <a href="#traffic" class="sidebar-link">
+                                <span>Traffic Safety</span>
+                                <span class="sidebar-count">8</span>
+                            </a>
+                            <a href="#arts" class="sidebar-link">
+                                <span>Performing Arts</span>
+                                <span class="sidebar-count">18</span>
+                            </a>
+                            <a href="#virtual" class="sidebar-link">
+                                <span>Virtual Learning</span>
+                                <span class="sidebar-count">22</span>
+                            </a>
+                        </nav>
+                    </aside>
+
+                    <!-- Course Grid -->
+                    <div class="courses-main">
+                        <div class="courses-status">
+                            <p class="courses-count">Showing 12 of 156 courses</p>
+                        </div>
+
+                        <div class="courses-grid">
+                            <!-- Course 1 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80"
+                                    alt="Social Security planning" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge">Life & Leisure</span>
+                                    <h3>Social Security 101</h3>
+                                    <p class="course-card-details">Feb 24, 2026 | SCF Lakewood Ranch</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$29</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 2 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                                    alt="Leadership training" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: var(--color-navy);">Professional
+                                        Training</span>
+                                    <h3>SCF Leadership Boot Camp – Level 1</h3>
+                                    <p class="course-card-details">Feb 27, 2026 | SCF Lakewood Ranch</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$249</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 3 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                                    alt="Real estate training" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: var(--color-navy);">Professional
+                                        Training</span>
+                                    <h3>Real Estate Sales Associate Pre-Licensing</h3>
+                                    <p class="course-card-details">Self-paced | Online</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$399</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 4 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80"
+                                    alt="Retirement planning" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge">Life & Leisure</span>
+                                    <h3>Retirement Planning Today</h3>
+                                    <p class="course-card-details">Jan 29 - Feb 5, 2026 | SCF Lakewood Ranch</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$49</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 5 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
+                                    alt="Excel training" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: #11998e;">Technology</span>
+                                    <h3>Microsoft Excel Level 1</h3>
+                                    <p class="course-card-details">Mar 5, 2026 | SCF Bradenton</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$89</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 6 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+                                    alt="Medicare information" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge">Life & Leisure</span>
+                                    <h3>Medicare 101 – Everything You Need to Know!</h3>
+                                    <p class="course-card-details">Mar 10, 2026 | SCF Venice</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">Free</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 7 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80"
+                                    alt="Investigation course" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: var(--color-navy);">Professional
+                                        Training</span>
+                                    <h3>Private Investigator 40-Hour Course</h3>
+                                    <p class="course-card-details">Feb 14-22, 2026 | SCF Bradenton</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$299</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 8 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80"
+                                    alt="CDL training" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: var(--color-navy);">Professional
+                                        Training</span>
+                                    <h3>CDL Class A powered by FleetForce</h3>
+                                    <p class="course-card-details">Upon registration | TBD</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">Contact Us</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 9 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+                                    alt="Youth STEAM camp" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: var(--color-coral);">Youth
+                                        Enrichment</span>
+                                    <h3>Summer STEAM Camp</h3>
+                                    <p class="course-card-details">Jun 10-14, 2026 | SCF Bradenton</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$199</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 10 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&q=80"
+                                    alt="Cooking class" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge">Life & Leisure</span>
+                                    <h3>Italian Cooking Basics</h3>
+                                    <p class="course-card-details">Mar 15, 2026 | SCF Lakewood Ranch</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$79</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 11 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+                                    alt="ESL class" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: #f5576c;">English Language</span>
+                                    <h3>English as a Second Language - Level 1</h3>
+                                    <p class="course-card-details">Ongoing | SCF Bradenton</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$149</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Course 12 -->
+                            <article class="card course-card">
+                                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80"
+                                    alt="Music lessons" class="course-card-image">
+                                <div class="course-card-content">
+                                    <span class="course-card-badge" style="background: #a18cd1;">Performing Arts</span>
+                                    <h3>Guitar Fundamentals</h3>
+                                    <p class="course-card-details">Mar 3 - Apr 7, 2026 | SCF Venice</p>
+                                    <div class="course-card-footer">
+                                        <span class="course-card-price">$129</span>
+                                        <a href="https://scf.augusoft.net/" class="btn btn-small btn-secondary"
+                                            target="_blank">Enroll</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="load-more">
+                            <button class="btn btn-secondary">Load More Courses</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-main">LearnEd</span>
+                        <span class="logo-tagline">Lifelong Learning & Workforce Development</span>
+                    </div>
+                    <p>Part of State College of Florida</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <nav class="footer-links">
+                        <a href="courses.html" class="footer-link">All Courses</a>
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="index.html#faq" class="footer-link">FAQ</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Categories</h4>
+                    <nav class="footer-links">
+                        <a href="#youth" class="footer-link">Youth Enrichment</a>
+                        <a href="#professional" class="footer-link">Professional Training</a>
+                        <a href="#leisure" class="footer-link">Life & Leisure</a>
+                        <a href="#tech" class="footer-link">Technology</a>
+                        <a href="#corporate" class="footer-link">Corporate Training</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:LearnEd@SCF.edu">LearnEd@SCF.edu</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <a href="tel:941-363-7264">941-363-7264</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 State College of Florida. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/LearnEdSCF/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/LearnEdSCF/" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/showcase/LearnEdSCF/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
