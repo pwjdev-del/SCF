@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initAnimations();
   initParallax();
   initCounters();
-  initCourseFilter();
+  // initCourseFilter(); // Removed to use initLoadMore instead
 });
 
 /* ========================================
@@ -767,30 +767,94 @@ function debounce(func, wait) {
 
 function initLoadMore() {
   const loadMoreBtn = document.querySelector('.load-more .btn');
-  if (!loadMoreBtn) return;
+  const loadMoreContainer = document.querySelector('.load-more');
+  const coursesGrid = document.querySelector('.courses-grid');
 
-  let page = 1;
-  const coursesPerPage = 12;
+  if (!loadMoreBtn || !coursesGrid) return;
 
-  loadMoreBtn.addEventListener('click', async () => {
-    loadMoreBtn.disabled = true;
-    loadMoreBtn.textContent = 'Loading...';
+  const coursesPerPage = 6; // Show 6 courses initially
+  let currentlyVisible = coursesPerPage;
 
-    try {
-      // Simulate API call (replace with actual endpoint)
-      await new Promise(resolve => setTimeout(resolve, 1000));
+  function updateVisibility(category = 'all') {
+    const allCards = Array.from(coursesGrid.querySelectorAll('.course-card[data-category]'));
 
-      page++;
-      // Append new courses to grid
-      // Update count display
+    // Get cards matching current filter
+    const matchingCards = allCards.filter(card => {
+      return category === 'all' || card.dataset.category === category;
+    });
 
-      loadMoreBtn.textContent = 'Load More Courses';
-      loadMoreBtn.disabled = false;
-    } catch (error) {
-      showNotification('Failed to load more courses.', 'error');
-      loadMoreBtn.textContent = 'Load More Courses';
-      loadMoreBtn.disabled = false;
+    let visibleCount = 0;
+
+    matchingCards.forEach((card, index) => {
+      if (index < currentlyVisible) {
+        card.style.display = '';
+        card.style.animation = 'fadeIn 0.3s ease';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Hide non-matching cards
+    allCards.forEach(card => {
+      if (category !== 'all' && card.dataset.category !== category) {
+        card.style.display = 'none';
+      }
+    });
+
+    // Show/hide load more button
+    if (loadMoreContainer) {
+      if (matchingCards.length > currentlyVisible) {
+        loadMoreContainer.style.display = 'flex';
+        loadMoreBtn.textContent = `Load More (${matchingCards.length - currentlyVisible} remaining)`;
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
     }
+
+    // Update count
+    const courseCount = document.getElementById('course-count');
+    if (courseCount) {
+      courseCount.textContent = visibleCount;
+    }
+
+    return { visibleCount, totalMatching: matchingCards.length };
+  }
+
+  // Initial visibility setup
+  const activeCategory = document.querySelector('.sidebar-link.active');
+  const initialCategory = activeCategory ? activeCategory.dataset.category : 'all';
+  updateVisibility(initialCategory);
+
+  // Load more button click
+  loadMoreBtn.addEventListener('click', () => {
+    currentlyVisible += coursesPerPage;
+    const activeLink = document.querySelector('.sidebar-link.active');
+    const category = activeLink ? activeLink.dataset.category : 'all';
+    updateVisibility(category);
+  });
+
+  // Listen for category changes from sidebar
+  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-category]');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Reset visible count when changing categories
+      currentlyVisible = coursesPerPage;
+
+      // Update active state
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const category = link.dataset.category;
+      updateVisibility(category);
+
+      // Smooth scroll on mobile
+      if (window.innerWidth <= 991) {
+        coursesGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 }
 
@@ -855,55 +919,7 @@ function initDropdownNav() {
   });
 }
 
-/* ========================================
-   COURSE CATEGORY FILTER
-   ======================================== */
 
-function initCourseFilter() {
-  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-category]');
-  const courseCards = document.querySelectorAll('.course-card[data-category]');
-  const courseCount = document.getElementById('course-count');
-
-  if (sidebarLinks.length === 0 || courseCards.length === 0) return;
-
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      // Update active state
-      sidebarLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      const category = link.dataset.category;
-      let visibleCount = 0;
-
-      courseCards.forEach(card => {
-        const cardCategory = card.dataset.category;
-
-        if (category === 'all' || cardCategory === category) {
-          card.style.display = '';
-          card.style.animation = 'fadeIn 0.3s ease';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      // Update count
-      if (courseCount) {
-        courseCount.textContent = visibleCount;
-      }
-
-      // Smooth scroll to course grid on mobile
-      if (window.innerWidth <= 991) {
-        const grid = document.querySelector('.courses-grid');
-        if (grid) {
-          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  });
-}
 
 // Initialize additional components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
