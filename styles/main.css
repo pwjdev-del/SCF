@@ -2028,6 +2028,50 @@ p:last-child {
     height: 20px;
 }
 
+/* Missing styles for Contact Page Social Links */
+.contact-social-card {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--color-cream);
+    border-radius: var(--radius-lg);
+}
+
+.contact-social-card h3 {
+    font-size: var(--text-body-lg);
+    margin-bottom: var(--space-md);
+}
+
+.contact-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    color: var(--color-navy);
+    font-weight: var(--weight-medium);
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    transform: translateX(4px);
+    color: var(--color-scf-green-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-scf-green-primary);
+    flex-shrink: 0;
+}
+
 /* ========================================
    UTILITY CLASSES
    ======================================== */
