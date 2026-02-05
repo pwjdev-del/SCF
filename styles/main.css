@@ -401,6 +401,11 @@ p:last-child {
     opacity: 0.8;
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
 .nav {
     display: flex;
     align-items: center;
