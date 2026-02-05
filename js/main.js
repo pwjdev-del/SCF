@@ -601,100 +601,272 @@ function initCounters() {
    FILTER BAR (Courses Page)
    ======================================== */
 
-function initFilterBar() {
+function initCourseManager() {
+  // --- DOM Elements ---
+  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-category]');
   const filterBar = document.querySelector('.filter-bar');
-  if (!filterBar) return;
+  const selects = filterBar ? filterBar.querySelectorAll('select') : [];
+  const searchInput = filterBar ? filterBar.querySelector('.filter-search input') : null;
+  const chipsContainer = filterBar ? filterBar.querySelector('.filter-chips') : null;
+  const clearAllBtn = filterBar ? filterBar.querySelector('.filter-clear') : null;
 
-  const selects = filterBar.querySelectorAll('select');
-  const searchInput = filterBar.querySelector('.filter-search input');
-  const chipsContainer = filterBar.querySelector('.filter-chips');
-  const clearAllBtn = filterBar.querySelector('.filter-clear');
+  const coursesGrid = document.querySelector('.courses-grid');
+  const courseCards = coursesGrid ? Array.from(coursesGrid.querySelectorAll('.course-card')) : [];
+  const courseCountDisplay = document.getElementById('course-count');
 
-  let activeFilters = {};
+  const loadMoreContainer = document.querySelector('.load-more');
+  const loadMoreBtn = loadMoreContainer ? loadMoreContainer.querySelector('.btn') : null;
 
-  function updateFilters() {
-    // Collect filters
-    selects.forEach(select => {
-      const name = select.name;
-      const value = select.value;
-      if (value) {
-        activeFilters[name] = value;
-      } else {
-        delete activeFilters[name];
-      }
-    });
+  if (!coursesGrid) return; // Exit if not on courses page
 
-    // Update chips
-    updateChips();
+  // --- State ---
+  const state = {
+    category: 'all',
+    search: '',
+    location: '',
+    format: '',
+    // other filters can be added here
+    visibleCount: 6,
+    itemsPerPage: 6
+  };
 
-    // Filter courses (implement based on your data structure)
-    filterCourses();
+  // --- Initial Setup ---
+  // Check if URL hash has a category
+  if (window.location.hash) {
+    const hashCat = window.location.hash.substring(1);
+    if ([...sidebarLinks].some(l => l.dataset.category === hashCat)) {
+      state.category = hashCat;
+    }
   }
 
-  function updateChips() {
-    if (!chipsContainer) return;
+  // --- Core Functions ---
 
+  function getActiveFilters() {
+    const active = {};
+    if (state.category !== 'all') active.category = state.category;
+    if (state.search) active.search = state.search;
+    if (state.location) active.location = state.location;
+    if (state.format) active.format = state.format;
+    return active;
+  }
+
+  function renderChips() {
+    if (!chipsContainer) return;
     chipsContainer.innerHTML = '';
 
-    Object.entries(activeFilters).forEach(([key, value]) => {
+    const active = getActiveFilters();
+    Object.entries(active).forEach(([key, value]) => {
+      // Don't show chip for category if it's selected in sidebar (redundant)
+      // but show if selected via dropdown? Let's show all for clarity except maybe 'all'
+
+      let label = value;
+      // Get human readable label for selects
+      if (key === 'category' || key === 'location' || key === 'format') {
+        const select = filterBar.querySelector(`select[name="${key}"]`);
+        const option = select ? select.querySelector(`option[value="${value}"]`) : null;
+        if (option) label = option.text;
+
+        // If category came from sidebar and not select (potentially), try to map it
+        if (key === 'category' && !option) {
+          const link = document.querySelector(`.sidebar-link[data-category="${value}"]`);
+          if (link) label = link.querySelector('span').textContent;
+        }
+      }
+
       const chip = document.createElement('span');
       chip.className = 'filter-chip';
       chip.innerHTML = `
-        ${value}
-        <button aria-label="Remove ${value} filter" data-filter="${key}">×</button>
+        ${label} <button aria-label="Remove filter" data-key="${key}">×</button>
       `;
       chipsContainer.appendChild(chip);
     });
 
-    // Show/hide clear all
     if (clearAllBtn) {
-      clearAllBtn.style.display = Object.keys(activeFilters).length > 0 ? 'inline' : 'none';
+      clearAllBtn.style.display = Object.keys(active).length > 0 ? 'inline-block' : 'none';
     }
   }
 
-  function filterCourses() {
-    // Implement course filtering based on activeFilters
-    // This would typically involve showing/hiding course cards
-    // or fetching filtered results from an API
-    console.log('Filtering with:', activeFilters);
+  function applyFilters() {
+    // 1. Filter the array of cards
+    const filteredCards = courseCards.filter(card => {
+      // Category Filter
+      const cardCat = card.dataset.category;
+      if (state.category !== 'all' && cardCat !== state.category) return false;
+
+      // Search Filter (Title & Description)
+      if (state.search) {
+        const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('.course-card-details')?.textContent.toLowerCase() || '';
+        const term = state.search.toLowerCase();
+        if (!title.includes(term) && !desc.includes(term)) return false;
+      }
+
+      // Location & Format would need data-attributes on cards. 
+      // For now, if user selects them, we might assume partial match or just ignore if data missing.
+      // Let's assume strict if data exists, loose if not? 
+      // Current HTML doesn't have data-location/format. 
+      // We will implement basic loose text matching for now or ignore.
+      // Let's basically ignore them for exact filtering to avoid hiding everything, 
+      // OR implement text search for them in the details string.
+
+      if (state.location) {
+        const details = card.querySelector('.course-card-details')?.textContent.toLowerCase() || '';
+        // Map values: 'bradenton' -> 'scf bradenton', etc.
+        // This is a rough approximation.
+        if (!details.includes(state.location) && state.location !== 'online') {
+          // Allow online to match 'online' text
+          // If location is specific 'bradenton', look for 'bradenton'
+          if (!details.includes(state.location)) return false;
+        }
+      }
+
+      if (state.format) {
+        const details = card.querySelector('.course-card-details')?.textContent.toLowerCase() || '';
+        if (state.format === 'online' && !details.includes('online')) return false;
+        // In-person is hard to detect strictly without negative online, assume default?
+      }
+
+      return true;
+    });
+
+    // 2. Pagination Logic
+    const totalVisible = filteredCards.length;
+    const cardsToShow = filteredCards.slice(0, state.visibleCount);
+
+    // 3. Update DOM
+    // Hide all first
+    courseCards.forEach(card => card.style.display = 'none');
+
+    // Show filtered & paginated
+    cardsToShow.forEach(card => {
+      card.style.display = '';
+      card.style.animation = 'fadeIn 0.3s ease';
+    });
+
+    // 4. Update UI Elements
+    // Count
+    if (courseCountDisplay) courseCountDisplay.textContent = totalVisible;
+
+    // Load More Button
+    if (loadMoreContainer) {
+      if (totalVisible > state.visibleCount) {
+        loadMoreContainer.style.display = 'flex';
+        if (loadMoreBtn) loadMoreBtn.textContent = `Load More (${totalVisible - state.visibleCount} remaining)`;
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
+    }
+
+    // Sidebar Active State
+    sidebarLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.category === state.category);
+    });
+
+    // Dropdown Sync (if category changed via sidebar)
+    if (filterBar) {
+      const catSelect = filterBar.querySelector('select[name="category"]');
+      if (catSelect) {
+        // Only update if different to avoid potential loops or UX jumps
+        if (catSelect.value !== state.category && state.category !== 'all') {
+          catSelect.value = state.category;
+        } else if (state.category === 'all') {
+          catSelect.value = '';
+        }
+      }
+    }
+
+    // Chips
+    renderChips();
   }
 
+  function updateState(key, value) {
+    state[key] = value;
+    // Reset pagination on filter change
+    if (key !== 'visibleCount') {
+      state.visibleCount = state.itemsPerPage;
+    }
+    applyFilters();
+  }
+
+  // --- Event Listeners ---
+
+  // 1. Sidebar Links
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      updateState('category', link.dataset.category);
+      // Scroll on mobile
+      if (window.innerWidth <= 991) {
+        coursesGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // 2. Filter Dropdowns
   selects.forEach(select => {
-    select.addEventListener('change', updateFilters);
+    select.addEventListener('change', (e) => {
+      const key = select.name;
+      const value = select.value || (key === 'category' ? 'all' : ''); // Default category to all
+      updateState(key, value);
+    });
   });
 
-  searchInput?.addEventListener('input', debounce(() => {
-    const query = searchInput.value.trim();
-    if (query) {
-      activeFilters.search = query;
-    } else {
-      delete activeFilters.search;
-    }
-    updateChips();
-    filterCourses();
-  }, 300));
+  // 3. Search Input (Debounced)
+  if (searchInput) {
+    let timeout;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        updateState('search', e.target.value.trim());
+      }, 300);
+    });
+  }
 
-  chipsContainer?.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-      const filterKey = e.target.dataset.filter;
-      delete activeFilters[filterKey];
+  // 4. Chips (Remove)
+  if (chipsContainer) {
+    chipsContainer.addEventListener('click', (e) => {
+      if (e.target.tagName === 'BUTTON') {
+        const key = e.target.dataset.key;
+        // Reset value
+        if (key === 'category') updateState(key, 'all');
+        else updateState(key, '');
 
-      // Reset corresponding select
-      const select = filterBar.querySelector(`select[name="${filterKey}"]`);
-      if (select) select.value = '';
+        // Reset specific input in UI
+        if (key === 'search' && searchInput) searchInput.value = '';
+        const select = filterBar.querySelector(`select[name="${key}"]`);
+        if (select) select.value = '';
+      }
+    });
+  }
 
-      updateChips();
-      filterCourses();
-    }
-  });
+  // 5. Clear All
+  if (clearAllBtn) {
+    clearAllBtn.addEventListener('click', () => {
+      state.category = 'all';
+      state.search = '';
+      state.location = '';
+      state.format = '';
+      state.visibleCount = state.itemsPerPage;
 
-  clearAllBtn?.addEventListener('click', () => {
-    activeFilters = {};
-    selects.forEach(select => select.value = '');
-    if (searchInput) searchInput.value = '';
-    updateChips();
-    filterCourses();
-  });
+      // Reset UI inputs
+      selects.forEach(s => s.value = '');
+      if (searchInput) searchInput.value = '';
+
+      applyFilters();
+    });
+  }
+
+  // 6. Load More
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      state.visibleCount += state.itemsPerPage;
+      // Just re-render, don't reset
+      applyFilters(); // This re-slices using new visibleCount
+    });
+  }
+
+  // Initial Apply
+  applyFilters();
 }
 
 /* ========================================
@@ -761,102 +933,7 @@ function debounce(func, wait) {
   };
 }
 
-/* ========================================
-   LOAD MORE (Courses Page)
-   ======================================== */
 
-function initLoadMore() {
-  const loadMoreBtn = document.querySelector('.load-more .btn');
-  const loadMoreContainer = document.querySelector('.load-more');
-  const coursesGrid = document.querySelector('.courses-grid');
-
-  if (!loadMoreBtn || !coursesGrid) return;
-
-  const coursesPerPage = 6; // Show 6 courses initially
-  let currentlyVisible = coursesPerPage;
-
-  function updateVisibility(category = 'all') {
-    const allCards = Array.from(coursesGrid.querySelectorAll('.course-card[data-category]'));
-
-    // Get cards matching current filter
-    const matchingCards = allCards.filter(card => {
-      return category === 'all' || card.dataset.category === category;
-    });
-
-    let visibleCount = 0;
-
-    matchingCards.forEach((card, index) => {
-      if (index < currentlyVisible) {
-        card.style.display = '';
-        card.style.animation = 'fadeIn 0.3s ease';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    // Hide non-matching cards
-    allCards.forEach(card => {
-      if (category !== 'all' && card.dataset.category !== category) {
-        card.style.display = 'none';
-      }
-    });
-
-    // Show/hide load more button
-    if (loadMoreContainer) {
-      if (matchingCards.length > currentlyVisible) {
-        loadMoreContainer.style.display = 'flex';
-        loadMoreBtn.textContent = `Load More (${matchingCards.length - currentlyVisible} remaining)`;
-      } else {
-        loadMoreContainer.style.display = 'none';
-      }
-    }
-
-    // Update count
-    const courseCount = document.getElementById('course-count');
-    if (courseCount) {
-      courseCount.textContent = visibleCount;
-    }
-
-    return { visibleCount, totalMatching: matchingCards.length };
-  }
-
-  // Initial visibility setup
-  const activeCategory = document.querySelector('.sidebar-link.active');
-  const initialCategory = activeCategory ? activeCategory.dataset.category : 'all';
-  updateVisibility(initialCategory);
-
-  // Load more button click
-  loadMoreBtn.addEventListener('click', () => {
-    currentlyVisible += coursesPerPage;
-    const activeLink = document.querySelector('.sidebar-link.active');
-    const category = activeLink ? activeLink.dataset.category : 'all';
-    updateVisibility(category);
-  });
-
-  // Listen for category changes from sidebar
-  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-category]');
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      // Reset visible count when changing categories
-      currentlyVisible = coursesPerPage;
-
-      // Update active state
-      sidebarLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      const category = link.dataset.category;
-      updateVisibility(category);
-
-      // Smooth scroll on mobile
-      if (window.innerWidth <= 991) {
-        coursesGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-}
 
 /* ========================================
    DROPDOWN NAVIGATION (Keyboard Support)
@@ -923,8 +1000,7 @@ function initDropdownNav() {
 
 // Initialize additional components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  initFilterBar();
-  initLoadMore();
+  initCourseManager();
   initDropdownNav();
   initTestimonialCarousel();
 });
